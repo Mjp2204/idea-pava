@@ -2,7 +2,7 @@ from customtkinter import CTk, CTkLabel, CTkButton, CTkFrame, CTkEntry, CTkCheck
 import os
 import sys
 from PIL import Image, ImageTk
-from usuario_concreto import UsuarioBase  # Importa la clase UsuarioBase
+from usuario import UsuarioBase  # Importa la clase UsuarioBase
 from botones_base import BotonesBase  # Importa la clase BotonesBase
 
 # Rutas y colores
