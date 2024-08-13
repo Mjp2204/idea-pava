@@ -1,7 +1,7 @@
 # LINKS MAPAS DE CLASES Y DE CASOS
 
 ## Diagrama de clases:
-https://lucid.app/lucidchart/c06f849c-d2c9-499b-b866-793291dcb264/edit?viewport_loc=-219%2C-170%2C2824%2C1173%2CHWEp-vi-RSFO&invitationId=inv_abfea2a8-9820-45aa-9cd0-ff530318a6ed
+https://lucid.app/lucidchart/76d7981d-8093-4b84-830d-ff160fcb389f/edit?viewport_loc=-1401%2C22%2C4039%2C1896%2C.Q4MUjXso07N&invitationId=inv_8bfca35f-58a7-46af-b9b5-df4fe0e93c07
 ![DIAGRAMA1](<Clase UML.png>)
 
 ## Diagrama de casos de uso:
