@@ -1,4 +1,4 @@
-from interfaz_abstracta import InterfazAbstracta
+from interface import InterfazAbstracta
 import customtkinter as ctk
 
 class UsuarioBase(InterfazAbstracta):
