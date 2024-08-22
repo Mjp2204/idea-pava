@@ -3,10 +3,10 @@ import datetime
 from tkinter import Listbox, Tk, messagebox
 from customtkinter import CTkButton, CTkFrame, CTkEntry, CTkLabel, CTkToplevel
 
-class BotonesBase:
+class Programador:
     def __init__(self, root):
         self.root = root
-        self.frame = CTkFrame(root, width=480, height=500, bg_color='#010101')  # Fondo negro
+        self.frame = CTkFrame(root, width=480, height=500, bg_color='#010101')  
         self.frame.grid(column=0, row=0, sticky='nsew', padx=50, pady=50)
         self.frame.columnconfigure(0, weight=1)
         self.frame.rowconfigure([0, 1, 2, 3, 4], weight=1)
@@ -136,7 +136,7 @@ class BotonesBase:
         ventana_tareas = CTkToplevel(self.root)
         ventana_tareas.title("Mostrar Tareas")
         ventana_tareas.geometry("400x300")
-        ventana_tareas.config(bg='#010101')  # Fondo negro
+        ventana_tareas.config(bg='#010101')  
 
         tareas = self.cargar_tareas()
         
@@ -201,6 +201,6 @@ if __name__ == "__main__":
     root.geometry("300x290")
     root.config(bg='#010101') 
 
-    app = BotonesBase(root)
+    app = Programador(root)
     
     root.mainloop()

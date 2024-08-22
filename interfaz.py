@@ -1,9 +1,9 @@
-from customtkinter import CTk, CTkLabel, CTkButton, CTkFrame, CTkEntry, CTkCheckBox
 import os
 import sys
 from PIL import Image, ImageTk
-from usuario import UsuarioBase  # Importa la clase UsuarioBase
-from botones_base import BotonesBase  # Importa la clase BotonesBase
+from customtkinter import CTk, CTkLabel, CTkButton, CTkFrame, CTkEntry, CTkCheckBox
+from usuario_concreto import UsuarioConcreto
+from programador import Programador  
 
 # Rutas y colores
 ruta_logo = 'imagenes/logo.png'
@@ -11,10 +11,10 @@ c_negro = '#010101'
 c_blanco = '#FFFFFF'
 user_data_file = 'info.txt'
 
-# Clase concreta Interfaz que hereda de UsuarioBase
-class Interfaz(UsuarioBase):
+class Interfaz:
     def __init__(self, root):
-        super().__init__(root)
+        self.root = root
+        self.usuario = UsuarioConcreto(root)
         self.logo_image = None
         self.nombre = None
         self.contraseña = None
@@ -72,14 +72,13 @@ class Interfaz(UsuarioBase):
             self.frame_inicio.destroy()
             self.frame_inicio = None
 
-        self.frame_bienvenida = self.crear_bienvenida_frame(nombre_usuario, self.abrir_botonera)
+        self.frame_bienvenida = self.usuario.crear_bienvenida_frame(nombre_usuario, self.abrir_botonera)
 
     def abrir_botonera(self):
         if hasattr(self, 'frame_bienvenida') and self.frame_bienvenida:
             self.frame_bienvenida.destroy()
             self.frame_bienvenida = None
 
-        # Cierra la ventana actual y abre una nueva ventana para los botones
         self.root.destroy()
 
         nueva_ventana = CTk()
@@ -87,7 +86,7 @@ class Interfaz(UsuarioBase):
         nueva_ventana.geometry('480x500')
         nueva_ventana.config(bg=c_negro)
 
-        app_botonera = BotonesBase(nueva_ventana)
+        app_botonera = Programador(nueva_ventana)
         nueva_ventana.mainloop()
 
     def guardar_info(self, nombre, contraseña, recordar):
@@ -110,23 +109,6 @@ class Interfaz(UsuarioBase):
                         self.recordarme.select()
                     else:
                         self.recordarme.deselect()
-
-    def crear_bienvenida_frame(self, nombre_usuario, callback):
-        frame = CTkFrame(self.root, bg_color=self.root.cget('bg'))
-        frame.grid(column=0, row=0, sticky='nsew', padx=50, pady=50)
-
-        frame.columnconfigure(0, weight=1)
-        frame.rowconfigure([0, 1], weight=1)
-
-        welcome_message = f"Bienvenido, {nombre_usuario}!"
-        subtitle_message = "Iniciaremos en unos instantes..."
-
-        CTkLabel(frame, text=welcome_message, font=('Arial', 16), fg_color=self.root.cget('bg'), bg_color=self.root.cget('bg')).grid(column=0, row=0, padx=20, pady=(20, 10))
-        CTkLabel(frame, text=subtitle_message, font=('Arial', 12), fg_color=self.root.cget('bg'), bg_color=self.root.cget('bg')).grid(column=0, row=1, padx=20, pady=(10, 20))
-
-        self.root.after(5000, lambda: callback())  
-
-        return frame
 
 if __name__ == "__main__":
     root = CTk()

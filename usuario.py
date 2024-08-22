@@ -1,10 +1,11 @@
-from abc import ABC, abstractmethod
-from customtkinter import CTk, CTkLabel, CTkFrame
+from interfaz_abstracta import InterfazAbstracta
+import customtkinter as ctk
 
-class UsuarioBase(ABC):
+class UsuarioBase(InterfazAbstracta):
+    
     def __init__(self, root):
         self.root = root
 
-    @abstractmethod
-    def crear_bienvenida_frame(self, nombre_usuario, callback):
+    def metodo_adicional(self):
+        """Implementación parcial o vacía del método adicional"""
         pass
