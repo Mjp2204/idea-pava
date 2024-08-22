@@ -2,7 +2,7 @@
 
 ## Diagrama de clases:
 <<<<<<< HEAD
-https://lucid.app/lucidchart/c06f849c-d2c9-499b-b866-793291dcb264/edit?view_items=41N5nf13wb_Q&invitationId=inv_abfea2a8-9820-45aa-9cd0-ff530318a6ed
+https://lucid.app/lucidchart/c06f849c-d2c9-499b-b866-793291dcb264/edit?view_items=aNL219Ru-t-u&invitationId=inv_abfea2a8-9820-45aa-9cd0-ff530318a6ed
 ![1](<Imagenes/Clase UML.png>)
 
 ## Diagrama de casos de uso:
